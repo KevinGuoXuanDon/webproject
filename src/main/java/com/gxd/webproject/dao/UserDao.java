@@ -1,10 +1,8 @@
-package com.gxd.webproject.mapper;
+package com.gxd.webproject.dao;
 
 import com.gxd.webproject.model.User;
-import org.apache.ibatis.annotations.Mapper;
 
-@Mapper
-public interface UserMapper {
+public interface UserDao {
     int deleteByPrimaryKey(Long id);
 
     int insert(User record);
@@ -15,5 +13,4 @@ public interface UserMapper {
 
     int updateByPrimaryKeySelective(User record);
 
-    int updateByPrimaryKey(User record);
-}
+    int updateByPrimaryKey(User record);}
