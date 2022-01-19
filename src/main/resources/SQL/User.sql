@@ -1,5 +1,5 @@
 -- auto Generated on 2022-01-18
--- DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user`(
 	id BIGINT (15) NOT NULL AUTO_INCREMENT COMMENT 'id',
 	`name` VARCHAR (50) NOT NULL DEFAULT '' COMMENT 'name',
