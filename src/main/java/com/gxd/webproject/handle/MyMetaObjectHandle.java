@@ -12,7 +12,7 @@ public class MyMetaObjectHandle implements MetaObjectHandler {
         this.setFieldValByName("createTime",new Date(),metaObject);
         this.setFieldValByName("updateTime",new Date(),metaObject);
         this.setFieldValByName("version",1,metaObject);
-
+        this.setFieldValByName("isDelete",0,metaObject);
     }
 
     @Override
