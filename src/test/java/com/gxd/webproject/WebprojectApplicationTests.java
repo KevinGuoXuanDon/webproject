@@ -33,4 +33,10 @@ class WebprojectApplicationTests {
         int insert = usersMapper.insert(user);
         System.out.println(insert);
     }
+    @Test
+    void testOptismicLock(){
+        User user = usersMapper.selectByPrimaryKey(1L);
+        user.setAge(100);
+        usersMapper.updateByPrimaryKey(user);
+    }
 }
