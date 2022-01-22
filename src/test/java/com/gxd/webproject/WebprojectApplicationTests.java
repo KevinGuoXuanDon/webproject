@@ -4,13 +4,10 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.gxd.webproject.dao.impl.UserDaoImpl;
 import com.gxd.webproject.mapper.TestMapper;
-import com.gxd.webproject.mapper.UserMapper;
 import com.gxd.webproject.model.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -58,6 +55,21 @@ class WebprojectApplicationTests {
     //条件查询测试
     @Test
     void testBaseMapper(){
+        //但是使用wrapper查询似乎无法使用索引？
         QueryWrapper<User> wrapper = new QueryWrapper<>();
+        //通过QueryWrapper查询条件时
+        //gt,ge,le,lt  > >= < <=
+        wrapper.ge("age",30);
+        //eq,ne  == !=
+        wrapper.eq("id",1);
+        //between 包含边界
+        wrapper.between("age",10,30);
+        //like
+        //orderByDesc 降序
+        wrapper.orderByDesc("id");
+        //last  拼接语句在sql最后
+        wrapper.last("limit 1");
+        //指定查询列
+        wrapper.select("id","name");
     }
 }
