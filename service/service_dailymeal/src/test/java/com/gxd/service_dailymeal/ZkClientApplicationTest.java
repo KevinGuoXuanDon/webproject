@@ -2,11 +2,12 @@ package com.gxd.service_dailymeal;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.framework.CuratorFramework;
-import org.apache.curator.framework.api.CreateModable;
+import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.framework.recipes.cache.NodeCache;
 import org.apache.curator.framework.recipes.cache.NodeCacheListener;
 import org.apache.curator.framework.recipes.locks.InterProcessLock;
 import org.apache.curator.framework.recipes.locks.InterProcessReadWriteLock;
+import org.apache.curator.retry.RetryNTimes;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,27 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class ZkClientApplicationTest {
     @Autowired
     CuratorFramework curatorFramework;
+
+
+    @Test
+    public void connectionTest() {
+        try {
+            String connectionString = "127.0.0.1:2181";
+            CuratorFramework client = CuratorFrameworkFactory.newClient(
+                    connectionString,
+                    10000,
+                    10000,
+                    new RetryNTimes(10, 5000)
+            );
+            client.start();
+            Thread.sleep(10000000);
+            client.close();
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+
+    }
 
     @Test
     public void createNodes() throws Exception{

@@ -13,6 +13,11 @@
 
 
     <dependencies>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>3.0.0</version>
+        </dependency>
         <!--ZK和Curator的配置-->
         <dependency>
             <groupId>org.apache.curator</groupId>
