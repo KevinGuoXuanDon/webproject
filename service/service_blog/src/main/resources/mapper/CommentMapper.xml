@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gxd.mapper.CommentMapper">
+  <resultMap id="BaseResultMap" type="com.gxd.dao.Comment">
+    <!--@mbg.generated-->
+    <!--@Table `comment`-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="is_top" jdbcType="TINYINT" property="isTop" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="blog_id" jdbcType="BIGINT" property="blogId" />
+    <result column="avatar" jdbcType="VARCHAR" property="avatar" />
+    <result column="commenter_id" jdbcType="BIGINT" property="commenterId" />
+    <result column="href" jdbcType="VARCHAR" property="href" />
+    <result column="ip" jdbcType="VARCHAR" property="ip" />
+    <result column="like" jdbcType="INTEGER" property="like" />
+    <result column="parent_id" jdbcType="BIGINT" property="parentId" />
+    <result column="outside" jdbcType="VARCHAR" property="outside" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, content, `status`, is_top, nickname, blog_id, avatar, commenter_id, href, ip, 
+    `like`, parent_id, outside, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from `comment`
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from `comment`
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gxd.dao.Comment" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into `comment` (content, `status`, is_top, 
+      nickname, blog_id, avatar, 
+      commenter_id, href, ip, 
+      `like`, parent_id, outside, 
+      create_time)
+    values (#{content,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{isTop,jdbcType=TINYINT}, 
+      #{nickname,jdbcType=VARCHAR}, #{blogId,jdbcType=BIGINT}, #{avatar,jdbcType=VARCHAR}, 
+      #{commenterId,jdbcType=BIGINT}, #{href,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, 
+      #{like,jdbcType=INTEGER}, #{parentId,jdbcType=BIGINT}, #{outside,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gxd.dao.Comment" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into `comment`
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="content != null">
+        content,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="isTop != null">
+        is_top,
+      </if>
+      <if test="nickname != null">
+        nickname,
+      </if>
+      <if test="blogId != null">
+        blog_id,
+      </if>
+      <if test="avatar != null">
+        avatar,
+      </if>
+      <if test="commenterId != null">
+        commenter_id,
+      </if>
+      <if test="href != null">
+        href,
+      </if>
+      <if test="ip != null">
+        ip,
+      </if>
+      <if test="like != null">
+        `like`,
+      </if>
+      <if test="parentId != null">
+        parent_id,
+      </if>
+      <if test="outside != null">
+        outside,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="isTop != null">
+        #{isTop,jdbcType=TINYINT},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="blogId != null">
+        #{blogId,jdbcType=BIGINT},
+      </if>
+      <if test="avatar != null">
+        #{avatar,jdbcType=VARCHAR},
+      </if>
+      <if test="commenterId != null">
+        #{commenterId,jdbcType=BIGINT},
+      </if>
+      <if test="href != null">
+        #{href,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null">
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="like != null">
+        #{like,jdbcType=INTEGER},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="outside != null">
+        #{outside,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gxd.dao.Comment">
+    <!--@mbg.generated-->
+    update `comment`
+    <set>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="isTop != null">
+        is_top = #{isTop,jdbcType=TINYINT},
+      </if>
+      <if test="nickname != null">
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="blogId != null">
+        blog_id = #{blogId,jdbcType=BIGINT},
+      </if>
+      <if test="avatar != null">
+        avatar = #{avatar,jdbcType=VARCHAR},
+      </if>
+      <if test="commenterId != null">
+        commenter_id = #{commenterId,jdbcType=BIGINT},
+      </if>
+      <if test="href != null">
+        href = #{href,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null">
+        ip = #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="like != null">
+        `like` = #{like,jdbcType=INTEGER},
+      </if>
+      <if test="parentId != null">
+        parent_id = #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="outside != null">
+        outside = #{outside,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gxd.dao.Comment">
+    <!--@mbg.generated-->
+    update `comment`
+    set content = #{content,jdbcType=VARCHAR},
+      `status` = #{status,jdbcType=INTEGER},
+      is_top = #{isTop,jdbcType=TINYINT},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      blog_id = #{blogId,jdbcType=BIGINT},
+      avatar = #{avatar,jdbcType=VARCHAR},
+      commenter_id = #{commenterId,jdbcType=BIGINT},
+      href = #{href,jdbcType=VARCHAR},
+      ip = #{ip,jdbcType=VARCHAR},
+      `like` = #{like,jdbcType=INTEGER},
+      parent_id = #{parentId,jdbcType=BIGINT},
+      outside = #{outside,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

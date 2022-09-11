@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gxd.mapper.BlogMapper">
+  <resultMap id="BaseResultMap" type="com.gxd.dao.Blog">
+    <!--@mbg.generated-->
+    <!--@Table blog-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="pic" jdbcType="VARCHAR" property="pic" />
+    <result column="description" jdbcType="LONGVARCHAR" property="description" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="access_permission" jdbcType="TINYINT" property="accessPermission" />
+    <result column="comment_enable" jdbcType="TINYINT" property="commentEnable" />
+    <result column="is_top" jdbcType="TINYINT" property="isTop" />
+    <result column="like" jdbcType="INTEGER" property="like" />
+    <result column="comment_count" jdbcType="INTEGER" property="commentCount" />
+    <result column="views" jdbcType="INTEGER" property="views" />
+    <result column="recommended" jdbcType="TINYINT" property="recommended" />
+    <result column="word_count" jdbcType="INTEGER" property="wordCount" />
+    <result column="category_id" jdbcType="BIGINT" property="categoryId" />
+    <result column="author_id" jdbcType="BIGINT" property="authorId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, title, pic, description, content, access_permission, comment_enable, is_top, 
+    `like`, comment_count, views, recommended, word_count, category_id, author_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from blog
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from blog
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gxd.dao.Blog" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into blog (title, pic, description, 
+      content, access_permission, comment_enable, 
+      is_top, `like`, comment_count, 
+      views, recommended, word_count, 
+      category_id, author_id)
+    values (#{title,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, #{description,jdbcType=LONGVARCHAR}, 
+      #{content,jdbcType=LONGVARCHAR}, #{accessPermission,jdbcType=TINYINT}, #{commentEnable,jdbcType=TINYINT}, 
+      #{isTop,jdbcType=TINYINT}, #{like,jdbcType=INTEGER}, #{commentCount,jdbcType=INTEGER}, 
+      #{views,jdbcType=INTEGER}, #{recommended,jdbcType=TINYINT}, #{wordCount,jdbcType=INTEGER}, 
+      #{categoryId,jdbcType=BIGINT}, #{authorId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gxd.dao.Blog" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into blog
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="title != null">
+        title,
+      </if>
+      <if test="pic != null">
+        pic,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="accessPermission != null">
+        access_permission,
+      </if>
+      <if test="commentEnable != null">
+        comment_enable,
+      </if>
+      <if test="isTop != null">
+        is_top,
+      </if>
+      <if test="like != null">
+        `like`,
+      </if>
+      <if test="commentCount != null">
+        comment_count,
+      </if>
+      <if test="views != null">
+        views,
+      </if>
+      <if test="recommended != null">
+        recommended,
+      </if>
+      <if test="wordCount != null">
+        word_count,
+      </if>
+      <if test="categoryId != null">
+        category_id,
+      </if>
+      <if test="authorId != null">
+        author_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="pic != null">
+        #{pic,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="accessPermission != null">
+        #{accessPermission,jdbcType=TINYINT},
+      </if>
+      <if test="commentEnable != null">
+        #{commentEnable,jdbcType=TINYINT},
+      </if>
+      <if test="isTop != null">
+        #{isTop,jdbcType=TINYINT},
+      </if>
+      <if test="like != null">
+        #{like,jdbcType=INTEGER},
+      </if>
+      <if test="commentCount != null">
+        #{commentCount,jdbcType=INTEGER},
+      </if>
+      <if test="views != null">
+        #{views,jdbcType=INTEGER},
+      </if>
+      <if test="recommended != null">
+        #{recommended,jdbcType=TINYINT},
+      </if>
+      <if test="wordCount != null">
+        #{wordCount,jdbcType=INTEGER},
+      </if>
+      <if test="categoryId != null">
+        #{categoryId,jdbcType=BIGINT},
+      </if>
+      <if test="authorId != null">
+        #{authorId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gxd.dao.Blog">
+    <!--@mbg.generated-->
+    update blog
+    <set>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="pic != null">
+        pic = #{pic,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="accessPermission != null">
+        access_permission = #{accessPermission,jdbcType=TINYINT},
+      </if>
+      <if test="commentEnable != null">
+        comment_enable = #{commentEnable,jdbcType=TINYINT},
+      </if>
+      <if test="isTop != null">
+        is_top = #{isTop,jdbcType=TINYINT},
+      </if>
+      <if test="like != null">
+        `like` = #{like,jdbcType=INTEGER},
+      </if>
+      <if test="commentCount != null">
+        comment_count = #{commentCount,jdbcType=INTEGER},
+      </if>
+      <if test="views != null">
+        views = #{views,jdbcType=INTEGER},
+      </if>
+      <if test="recommended != null">
+        recommended = #{recommended,jdbcType=TINYINT},
+      </if>
+      <if test="wordCount != null">
+        word_count = #{wordCount,jdbcType=INTEGER},
+      </if>
+      <if test="categoryId != null">
+        category_id = #{categoryId,jdbcType=BIGINT},
+      </if>
+      <if test="authorId != null">
+        author_id = #{authorId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gxd.dao.Blog">
+    <!--@mbg.generated-->
+    update blog
+    set title = #{title,jdbcType=VARCHAR},
+      pic = #{pic,jdbcType=VARCHAR},
+      description = #{description,jdbcType=LONGVARCHAR},
+      content = #{content,jdbcType=LONGVARCHAR},
+      access_permission = #{accessPermission,jdbcType=TINYINT},
+      comment_enable = #{commentEnable,jdbcType=TINYINT},
+      is_top = #{isTop,jdbcType=TINYINT},
+      `like` = #{like,jdbcType=INTEGER},
+      comment_count = #{commentCount,jdbcType=INTEGER},
+      views = #{views,jdbcType=INTEGER},
+      recommended = #{recommended,jdbcType=TINYINT},
+      word_count = #{wordCount,jdbcType=INTEGER},
+      category_id = #{categoryId,jdbcType=BIGINT},
+      author_id = #{authorId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

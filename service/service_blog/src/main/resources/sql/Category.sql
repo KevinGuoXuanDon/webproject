@@ -1,0 +1,8 @@
+-- auto Generated on 2022-09-10
+-- DROP TABLE IF EXISTS category;
+CREATE TABLE category(
+	id BIGINT (15) NOT NULL AUTO_INCREMENT COMMENT '主键',
+	`name` VARCHAR (50) NOT NULL DEFAULT '' COMMENT '类别',
+	create_time DATETIME NOT NULL DEFAULT now() COMMENT '创建时间',
+	PRIMARY KEY (id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT 'category';

@@ -1,0 +1,19 @@
+-- auto Generated on 2022-09-10
+-- DROP TABLE IF EXISTS `comment`;
+CREATE TABLE `comment`(
+	id BIGINT (15) NOT NULL AUTO_INCREMENT COMMENT 'id',
+	content VARCHAR (50) NOT NULL DEFAULT '' COMMENT '评论内容',
+	`status` INT (11) NOT NULL DEFAULT -1 COMMENT '评论状态',
+	is_top TINYINT (3) NOT NULL DEFAULT 0 COMMENT '置顶',
+	nickname VARCHAR (50) NOT NULL DEFAULT '' COMMENT '评论用户昵称',
+	blog_id BIGINT (15) NOT NULL DEFAULT -1 COMMENT '评论的博客id',
+	avatar VARCHAR (50) NOT NULL DEFAULT '' COMMENT '评论者的头像',
+	commenter_id BIGINT (15) NOT NULL DEFAULT -1 COMMENT '评论者id',
+	href VARCHAR (50) NOT NULL DEFAULT '' COMMENT '评论者的链接',
+	ip VARCHAR (50) NOT NULL DEFAULT '' COMMENT '评论者的ip',
+	`like` INT (11) NOT NULL DEFAULT -1 COMMENT '评论的点赞数',
+	parent_id BIGINT (15) NOT NULL DEFAULT -1 COMMENT '父评论id.',
+	outside VARCHAR (50) NOT NULL DEFAULT '' COMMENT '外部链接方式,比如qq、微信等授权',
+	create_time DATETIME NOT NULL DEFAULT now() COMMENT '创建时间',
+	PRIMARY KEY (id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT 'comment';

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gxd.mapper.VisitorMapper">
+  <resultMap id="BaseResultMap" type="com.gxd.dao.Visitor">
+    <!--@mbg.generated-->
+    <!--@Table visitor-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="uuid" jdbcType="VARCHAR" property="uuid" />
+    <result column="ip" jdbcType="VARCHAR" property="ip" />
+    <result column="ip_address" jdbcType="VARCHAR" property="ipAddress" />
+    <result column="os" jdbcType="VARCHAR" property="os" />
+    <result column="last_visit" jdbcType="TIMESTAMP" property="lastVisit" />
+    <result column="create_t_ime" jdbcType="TIMESTAMP" property="createTIme" />
+    <result column="browser" jdbcType="VARCHAR" property="browser" />
+    <result column="visit_count" jdbcType="BIGINT" property="visitCount" />
+    <result column="user_agent" jdbcType="VARCHAR" property="userAgent" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, uuid, ip, ip_address, os, last_visit, create_t_ime, browser, visit_count, user_agent
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from visitor
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from visitor
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gxd.dao.Visitor" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into visitor (uuid, ip, ip_address, 
+      os, last_visit, create_t_ime, 
+      browser, visit_count, user_agent
+      )
+    values (#{uuid,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, #{ipAddress,jdbcType=VARCHAR}, 
+      #{os,jdbcType=VARCHAR}, #{lastVisit,jdbcType=TIMESTAMP}, #{createTIme,jdbcType=TIMESTAMP}, 
+      #{browser,jdbcType=VARCHAR}, #{visitCount,jdbcType=BIGINT}, #{userAgent,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gxd.dao.Visitor" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into visitor
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uuid != null">
+        uuid,
+      </if>
+      <if test="ip != null">
+        ip,
+      </if>
+      <if test="ipAddress != null">
+        ip_address,
+      </if>
+      <if test="os != null">
+        os,
+      </if>
+      <if test="lastVisit != null">
+        last_visit,
+      </if>
+      <if test="createTIme != null">
+        create_t_ime,
+      </if>
+      <if test="browser != null">
+        browser,
+      </if>
+      <if test="visitCount != null">
+        visit_count,
+      </if>
+      <if test="userAgent != null">
+        user_agent,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uuid != null">
+        #{uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null">
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="ipAddress != null">
+        #{ipAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="os != null">
+        #{os,jdbcType=VARCHAR},
+      </if>
+      <if test="lastVisit != null">
+        #{lastVisit,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTIme != null">
+        #{createTIme,jdbcType=TIMESTAMP},
+      </if>
+      <if test="browser != null">
+        #{browser,jdbcType=VARCHAR},
+      </if>
+      <if test="visitCount != null">
+        #{visitCount,jdbcType=BIGINT},
+      </if>
+      <if test="userAgent != null">
+        #{userAgent,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gxd.dao.Visitor">
+    <!--@mbg.generated-->
+    update visitor
+    <set>
+      <if test="uuid != null">
+        uuid = #{uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null">
+        ip = #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="ipAddress != null">
+        ip_address = #{ipAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="os != null">
+        os = #{os,jdbcType=VARCHAR},
+      </if>
+      <if test="lastVisit != null">
+        last_visit = #{lastVisit,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTIme != null">
+        create_t_ime = #{createTIme,jdbcType=TIMESTAMP},
+      </if>
+      <if test="browser != null">
+        browser = #{browser,jdbcType=VARCHAR},
+      </if>
+      <if test="visitCount != null">
+        visit_count = #{visitCount,jdbcType=BIGINT},
+      </if>
+      <if test="userAgent != null">
+        user_agent = #{userAgent,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gxd.dao.Visitor">
+    <!--@mbg.generated-->
+    update visitor
+    set uuid = #{uuid,jdbcType=VARCHAR},
+      ip = #{ip,jdbcType=VARCHAR},
+      ip_address = #{ipAddress,jdbcType=VARCHAR},
+      os = #{os,jdbcType=VARCHAR},
+      last_visit = #{lastVisit,jdbcType=TIMESTAMP},
+      create_t_ime = #{createTIme,jdbcType=TIMESTAMP},
+      browser = #{browser,jdbcType=VARCHAR},
+      visit_count = #{visitCount,jdbcType=BIGINT},
+      user_agent = #{userAgent,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

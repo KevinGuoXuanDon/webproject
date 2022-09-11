@@ -1,1 +1,0 @@
-create if not exists database gxd_blog;

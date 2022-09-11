@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gxd.mapper.MeMapper">
+  <resultMap id="BaseResultMap" type="com.gxd.dao.Me">
+    <!--@mbg.generated-->
+    <!--@Table me-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="surname" jdbcType="VARCHAR" property="surname" />
+    <result column="given_name" jdbcType="VARCHAR" property="givenName" />
+    <result column="name_ek" jdbcType="VARCHAR" property="nameEk" />
+    <result column="info" jdbcType="LONGVARCHAR" property="info" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, surname, given_name, name_ek, info
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from me
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from me
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gxd.dao.Me" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into me (surname, given_name, name_ek, 
+      info)
+    values (#{surname,jdbcType=VARCHAR}, #{givenName,jdbcType=VARCHAR}, #{nameEk,jdbcType=VARCHAR}, 
+      #{info,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gxd.dao.Me" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into me
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="surname != null">
+        surname,
+      </if>
+      <if test="givenName != null">
+        given_name,
+      </if>
+      <if test="nameEk != null">
+        name_ek,
+      </if>
+      <if test="info != null">
+        info,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="surname != null">
+        #{surname,jdbcType=VARCHAR},
+      </if>
+      <if test="givenName != null">
+        #{givenName,jdbcType=VARCHAR},
+      </if>
+      <if test="nameEk != null">
+        #{nameEk,jdbcType=VARCHAR},
+      </if>
+      <if test="info != null">
+        #{info,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gxd.dao.Me">
+    <!--@mbg.generated-->
+    update me
+    <set>
+      <if test="surname != null">
+        surname = #{surname,jdbcType=VARCHAR},
+      </if>
+      <if test="givenName != null">
+        given_name = #{givenName,jdbcType=VARCHAR},
+      </if>
+      <if test="nameEk != null">
+        name_ek = #{nameEk,jdbcType=VARCHAR},
+      </if>
+      <if test="info != null">
+        info = #{info,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gxd.dao.Me">
+    <!--@mbg.generated-->
+    update me
+    set surname = #{surname,jdbcType=VARCHAR},
+      given_name = #{givenName,jdbcType=VARCHAR},
+      name_ek = #{nameEk,jdbcType=VARCHAR},
+      info = #{info,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
