@@ -1,44 +1,47 @@
 package com.gxd.service.impl;
 
+import com.gxd.dao.MeDao;
+import com.gxd.model.entity.Me;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.gxd.mapper.MeMapper;
-import com.gxd.dao.Me;
 import com.gxd.service.MeService;
+/**
+ * @author xuandongguo
+ */
 @Service
-public class MeServiceImpl implements MeService{
+public class MeServiceImpl implements MeService {
 
     @Resource
-    private MeMapper meMapper;
+    private MeDao meDao;
 
     @Override
     public int deleteByPrimaryKey(Long id) {
-        return meMapper.deleteByPrimaryKey(id);
+        return meDao.deleteByPrimaryKey(id);
     }
 
     @Override
     public int insert(Me record) {
-        return meMapper.insert(record);
+        return meDao.insert(record);
     }
 
     @Override
     public int insertSelective(Me record) {
-        return meMapper.insertSelective(record);
+        return meDao.insertSelective(record);
     }
 
     @Override
     public Me selectByPrimaryKey(Long id) {
-        return meMapper.selectByPrimaryKey(id);
+        return meDao.selectByPrimaryKey(id);
     }
 
     @Override
     public int updateByPrimaryKeySelective(Me record) {
-        return meMapper.updateByPrimaryKeySelective(record);
+        return meDao.updateByPrimaryKeySelective(record);
     }
 
     @Override
     public int updateByPrimaryKey(Me record) {
-        return meMapper.updateByPrimaryKey(record);
+        return meDao.updateByPrimaryKey(record);
     }
 
 }

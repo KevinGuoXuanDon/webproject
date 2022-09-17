@@ -1,44 +1,47 @@
 package com.gxd.service.impl;
 
+import com.gxd.dao.OperationLogDao;
+import com.gxd.model.entity.OperationLog;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.gxd.mapper.OperationLogMapper;
-import com.gxd.dao.OperationLog;
 import com.gxd.service.OperationLogService;
+/**
+ * @author xuandongguo
+ */
 @Service
-public class OperationLogServiceImpl implements OperationLogService{
+public class OperationLogServiceImpl implements OperationLogService {
 
     @Resource
-    private OperationLogMapper operationLogMapper;
+    private OperationLogDao operationLogDao;
 
     @Override
     public int deleteByPrimaryKey(Long id) {
-        return operationLogMapper.deleteByPrimaryKey(id);
+        return operationLogDao.deleteByPrimaryKey(id);
     }
 
     @Override
     public int insert(OperationLog record) {
-        return operationLogMapper.insert(record);
+        return operationLogDao.insert(record);
     }
 
     @Override
     public int insertSelective(OperationLog record) {
-        return operationLogMapper.insertSelective(record);
+        return operationLogDao.insertSelective(record);
     }
 
     @Override
     public OperationLog selectByPrimaryKey(Long id) {
-        return operationLogMapper.selectByPrimaryKey(id);
+        return operationLogDao.selectByPrimaryKey(id);
     }
 
     @Override
     public int updateByPrimaryKeySelective(OperationLog record) {
-        return operationLogMapper.updateByPrimaryKeySelective(record);
+        return operationLogDao.updateByPrimaryKeySelective(record);
     }
 
     @Override
     public int updateByPrimaryKey(OperationLog record) {
-        return operationLogMapper.updateByPrimaryKey(record);
+        return operationLogDao.updateByPrimaryKey(record);
     }
 
 }

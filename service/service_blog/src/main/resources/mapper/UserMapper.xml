@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gxd.mapper.UserMapper">
-  <resultMap id="BaseResultMap" type="com.gxd.dao.User">
+  <resultMap id="BaseResultMap" type="com.gxd.model.entity.User">
     <!--@mbg.generated-->
     <!--@Table `user`-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -30,7 +30,7 @@
     delete from `user`
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gxd.dao.User" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gxd.model.entity.User" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into `user` (username, `password`, nickname, 
       profile, email, create_date, 
@@ -39,7 +39,7 @@
       #{profile,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP}, #{authority,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gxd.dao.User" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gxd.model.entity.User" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into `user`
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -95,7 +95,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.gxd.dao.User">
+  <update id="updateByPrimaryKeySelective" parameterType="com.gxd.model.entity.User">
     <!--@mbg.generated-->
     update `user`
     <set>
@@ -126,7 +126,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.gxd.dao.User">
+  <update id="updateByPrimaryKey" parameterType="com.gxd.model.entity.User">
     <!--@mbg.generated-->
     update `user`
     set username = #{username,jdbcType=VARCHAR},

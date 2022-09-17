@@ -1,7 +1,10 @@
 package com.gxd.mapper;
 
-import com.gxd.dao.ErrorLog;
+import com.gxd.model.entity.ErrorLog;
 
+/**
+ * @author xuandongguo
+ */
 public interface ErrorLogMapper {
     int deleteByPrimaryKey(Long id);
 

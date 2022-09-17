@@ -1,7 +1,10 @@
 package com.gxd.mapper;
 
-import com.gxd.dao.Comment;
+import com.gxd.model.entity.Comment;
 
+/**
+ * @author xuandongguo
+ */
 public interface CommentMapper {
     int deleteByPrimaryKey(Long id);
 

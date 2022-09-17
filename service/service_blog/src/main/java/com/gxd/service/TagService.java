@@ -1,8 +1,11 @@
 package com.gxd.service;
 
-import com.gxd.dao.Tag;
-public interface TagService{
+import com.gxd.model.entity.Tag;
 
+/**
+ * @author xuandongguo
+ */
+public interface TagService {
 
     int deleteByPrimaryKey(Long id);
 

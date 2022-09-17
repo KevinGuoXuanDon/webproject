@@ -1,7 +1,10 @@
 package com.gxd.mapper;
 
-import com.gxd.dao.Tag;
+import com.gxd.model.entity.Tag;
 
+/**
+ * @author xuandongguo
+ */
 public interface TagMapper {
     int deleteByPrimaryKey(Long id);
 

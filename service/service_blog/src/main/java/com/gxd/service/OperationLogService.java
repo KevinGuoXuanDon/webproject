@@ -1,8 +1,11 @@
 package com.gxd.service;
 
-import com.gxd.dao.OperationLog;
-public interface OperationLogService{
+import com.gxd.model.entity.OperationLog;
 
+/**
+ * @author xuandongguo
+ */
+public interface OperationLogService {
 
     int deleteByPrimaryKey(Long id);
 

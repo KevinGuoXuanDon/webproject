@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gxd.mapper.VisitorMapper">
-  <resultMap id="BaseResultMap" type="com.gxd.dao.Visitor">
+  <resultMap id="BaseResultMap" type="com.gxd.model.entity.Visitor">
     <!--@mbg.generated-->
     <!--@Table visitor-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -31,7 +31,7 @@
     delete from visitor
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gxd.dao.Visitor" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gxd.model.entity.Visitor" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into visitor (uuid, ip, ip_address, 
       os, last_visit, create_t_ime, 
@@ -42,7 +42,7 @@
       #{browser,jdbcType=VARCHAR}, #{visitCount,jdbcType=BIGINT}, #{userAgent,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gxd.dao.Visitor" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gxd.model.entity.Visitor" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into visitor
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -104,7 +104,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.gxd.dao.Visitor">
+  <update id="updateByPrimaryKeySelective" parameterType="com.gxd.model.entity.Visitor">
     <!--@mbg.generated-->
     update visitor
     <set>
@@ -138,7 +138,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.gxd.dao.Visitor">
+  <update id="updateByPrimaryKey" parameterType="com.gxd.model.entity.Visitor">
     <!--@mbg.generated-->
     update visitor
     set uuid = #{uuid,jdbcType=VARCHAR},

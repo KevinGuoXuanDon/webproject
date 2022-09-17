@@ -1,8 +1,11 @@
 package com.gxd.service;
 
-import com.gxd.dao.Visitor;
-public interface VisitorService{
+import com.gxd.model.entity.Visitor;
 
+/**
+ * @author xuandongguo
+ */
+public interface VisitorService {
 
     int deleteByPrimaryKey(Long id);
 

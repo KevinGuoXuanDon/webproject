@@ -1,8 +1,11 @@
 package com.gxd.service;
 
-import com.gxd.dao.Category;
-public interface CategoryService{
+import com.gxd.model.entity.Category;
 
+/**
+ * @author xuandongguo
+ */
+public interface CategoryService {
 
     int deleteByPrimaryKey(Long id);
 

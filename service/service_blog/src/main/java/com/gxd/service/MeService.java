@@ -1,8 +1,11 @@
 package com.gxd.service;
 
-import com.gxd.dao.Me;
-public interface MeService{
+import com.gxd.model.entity.Me;
 
+/**
+ * @author xuandongguo
+ */
+public interface MeService {
 
     int deleteByPrimaryKey(Long id);
 

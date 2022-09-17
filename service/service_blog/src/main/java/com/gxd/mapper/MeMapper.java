@@ -1,7 +1,10 @@
 package com.gxd.mapper;
 
-import com.gxd.dao.Me;
+import com.gxd.model.entity.Me;
 
+/**
+ * @author xuandongguo
+ */
 public interface MeMapper {
     int deleteByPrimaryKey(Long id);
 

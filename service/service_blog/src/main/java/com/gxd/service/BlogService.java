@@ -1,8 +1,11 @@
 package com.gxd.service;
 
-import com.gxd.dao.Blog;
-public interface BlogService{
+import com.gxd.model.entity.Blog;
 
+/**
+ * @author xuandongguo
+ */
+public interface BlogService {
 
     int deleteByPrimaryKey(Long id);
 

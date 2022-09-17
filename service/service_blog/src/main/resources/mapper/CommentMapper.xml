@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gxd.mapper.CommentMapper">
-  <resultMap id="BaseResultMap" type="com.gxd.dao.Comment">
+  <resultMap id="BaseResultMap" type="com.gxd.model.entity.Comment">
     <!--@mbg.generated-->
     <!--@Table `comment`-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -36,7 +36,7 @@
     delete from `comment`
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gxd.dao.Comment" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gxd.model.entity.Comment" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into `comment` (content, `status`, is_top, 
       nickname, blog_id, avatar, 
@@ -49,7 +49,7 @@
       #{like,jdbcType=INTEGER}, #{parentId,jdbcType=BIGINT}, #{outside,jdbcType=VARCHAR}, 
       #{createTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gxd.dao.Comment" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gxd.model.entity.Comment" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into `comment`
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -135,7 +135,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.gxd.dao.Comment">
+  <update id="updateByPrimaryKeySelective" parameterType="com.gxd.model.entity.Comment">
     <!--@mbg.generated-->
     update `comment`
     <set>
@@ -181,7 +181,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.gxd.dao.Comment">
+  <update id="updateByPrimaryKey" parameterType="com.gxd.model.entity.Comment">
     <!--@mbg.generated-->
     update `comment`
     set content = #{content,jdbcType=VARCHAR},

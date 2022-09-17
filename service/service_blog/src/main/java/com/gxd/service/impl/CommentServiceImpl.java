@@ -1,44 +1,44 @@
 package com.gxd.service.impl;
 
+import com.gxd.dao.CommentDao;
+import com.gxd.model.entity.Comment;
+import com.gxd.service.CommentService;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.gxd.mapper.CommentMapper;
-import com.gxd.dao.Comment;
-import com.gxd.service.CommentService;
 @Service
-public class CommentServiceImpl implements CommentService{
+public class CommentServiceImpl implements CommentService {
 
     @Resource
-    private CommentMapper commentMapper;
+    private CommentDao commentDao;
 
     @Override
     public int deleteByPrimaryKey(Long id) {
-        return commentMapper.deleteByPrimaryKey(id);
+        return commentDao.deleteByPrimaryKey(id);
     }
 
     @Override
     public int insert(Comment record) {
-        return commentMapper.insert(record);
+        return commentDao.insert(record);
     }
 
     @Override
     public int insertSelective(Comment record) {
-        return commentMapper.insertSelective(record);
+        return commentDao.insertSelective(record);
     }
 
     @Override
     public Comment selectByPrimaryKey(Long id) {
-        return commentMapper.selectByPrimaryKey(id);
+        return commentDao.selectByPrimaryKey(id);
     }
 
     @Override
     public int updateByPrimaryKeySelective(Comment record) {
-        return commentMapper.updateByPrimaryKeySelective(record);
+        return commentDao.updateByPrimaryKeySelective(record);
     }
 
     @Override
     public int updateByPrimaryKey(Comment record) {
-        return commentMapper.updateByPrimaryKey(record);
+        return commentDao.updateByPrimaryKey(record);
     }
 
 }

@@ -1,44 +1,47 @@
 package com.gxd.service.impl;
 
+import com.gxd.dao.CategoryDao;
+import com.gxd.model.entity.Category;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.gxd.mapper.CategoryMapper;
-import com.gxd.dao.Category;
 import com.gxd.service.CategoryService;
+/**
+ * @author xuandongguo
+ */
 @Service
-public class CategoryServiceImpl implements CategoryService{
+public class CategoryServiceImpl implements CategoryService {
 
     @Resource
-    private CategoryMapper categoryMapper;
+    private CategoryDao categoryDao;
 
     @Override
     public int deleteByPrimaryKey(Long id) {
-        return categoryMapper.deleteByPrimaryKey(id);
+        return categoryDao.deleteByPrimaryKey(id);
     }
 
     @Override
     public int insert(Category record) {
-        return categoryMapper.insert(record);
+        return categoryDao.insert(record);
     }
 
     @Override
     public int insertSelective(Category record) {
-        return categoryMapper.insertSelective(record);
+        return categoryDao.insertSelective(record);
     }
 
     @Override
     public Category selectByPrimaryKey(Long id) {
-        return categoryMapper.selectByPrimaryKey(id);
+        return categoryDao.selectByPrimaryKey(id);
     }
 
     @Override
     public int updateByPrimaryKeySelective(Category record) {
-        return categoryMapper.updateByPrimaryKeySelective(record);
+        return categoryDao.updateByPrimaryKeySelective(record);
     }
 
     @Override
     public int updateByPrimaryKey(Category record) {
-        return categoryMapper.updateByPrimaryKey(record);
+        return categoryDao.updateByPrimaryKey(record);
     }
 
 }

@@ -1,8 +1,11 @@
 package com.gxd.service;
 
-import com.gxd.dao.User;
-public interface UserService{
+import com.gxd.model.entity.User;
 
+/**
+ * @author: Xuandong Guo
+ */
+public interface UserService {
 
     int deleteByPrimaryKey(Long id);
 

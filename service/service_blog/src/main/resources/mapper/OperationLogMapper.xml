@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gxd.mapper.OperationLogMapper">
-  <resultMap id="BaseResultMap" type="com.gxd.dao.OperationLog">
+  <resultMap id="BaseResultMap" type="com.gxd.model.entity.OperationLog">
     <!--@mbg.generated-->
     <!--@Table operation_log-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -33,7 +33,7 @@
     delete from operation_log
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gxd.dao.OperationLog" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gxd.model.entity.OperationLog" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into operation_log (username, user_agent, content, 
       url, `method`, param, 
@@ -44,7 +44,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{ip,jdbcType=VARCHAR}, #{ipAddress,jdbcType=VARCHAR}, 
       #{os,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gxd.dao.OperationLog" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gxd.model.entity.OperationLog" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into operation_log
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -112,7 +112,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.gxd.dao.OperationLog">
+  <update id="updateByPrimaryKeySelective" parameterType="com.gxd.model.entity.OperationLog">
     <!--@mbg.generated-->
     update operation_log
     <set>
@@ -149,7 +149,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.gxd.dao.OperationLog">
+  <update id="updateByPrimaryKey" parameterType="com.gxd.model.entity.OperationLog">
     <!--@mbg.generated-->
     update operation_log
     set username = #{username,jdbcType=VARCHAR},

@@ -2,6 +2,10 @@ package com.gxd.common;
 
 import lombok.Data;
 
+/**
+ * @author xuandongguo
+ * @param <T>
+ */
 @Data
 public class CommonResult<T> {
     private long code;

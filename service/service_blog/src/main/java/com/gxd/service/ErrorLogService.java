@@ -1,8 +1,11 @@
 package com.gxd.service;
 
-import com.gxd.dao.ErrorLog;
-public interface ErrorLogService{
+import com.gxd.model.entity.ErrorLog;
 
+/**
+ * @author xuandongguo
+ */
+public interface ErrorLogService {
 
     int deleteByPrimaryKey(Long id);
 

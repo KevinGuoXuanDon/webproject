@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gxd.mapper.MeMapper">
-  <resultMap id="BaseResultMap" type="com.gxd.dao.Me">
+  <resultMap id="BaseResultMap" type="com.gxd.model.entity.Me">
     <!--@mbg.generated-->
     <!--@Table me-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -26,14 +26,14 @@
     delete from me
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gxd.dao.Me" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gxd.model.entity.Me" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into me (surname, given_name, name_ek, 
       info)
     values (#{surname,jdbcType=VARCHAR}, #{givenName,jdbcType=VARCHAR}, #{nameEk,jdbcType=VARCHAR}, 
       #{info,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gxd.dao.Me" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gxd.model.entity.Me" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into me
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -65,7 +65,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.gxd.dao.Me">
+  <update id="updateByPrimaryKeySelective" parameterType="com.gxd.model.entity.Me">
     <!--@mbg.generated-->
     update me
     <set>
@@ -84,7 +84,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.gxd.dao.Me">
+  <update id="updateByPrimaryKey" parameterType="com.gxd.model.entity.Me">
     <!--@mbg.generated-->
     update me
     set surname = #{surname,jdbcType=VARCHAR},

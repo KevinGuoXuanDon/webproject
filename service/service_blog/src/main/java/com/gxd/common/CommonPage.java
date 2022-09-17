@@ -5,6 +5,10 @@ import lombok.Data;
 
 import java.util.List;
 
+/**
+ * @author xuandongguo
+ * @param <T>
+ */
 @Data
 public class CommonPage<T> {
     private Integer pageNum;

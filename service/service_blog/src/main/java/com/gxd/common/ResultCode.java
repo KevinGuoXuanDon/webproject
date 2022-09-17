@@ -1,5 +1,9 @@
 package com.gxd.common;
 
+/**
+ * @author xuandongguo
+ */
+
 public enum ResultCode {
     SUCCESS(200, "操作成功"),
     FAILED(500, "操作失败"),

@@ -1,7 +1,10 @@
 package com.gxd.mapper;
 
-import com.gxd.dao.OperationLog;
+import com.gxd.model.entity.OperationLog;
 
+/**
+ * @author xuandongguo
+ */
 public interface OperationLogMapper {
     int deleteByPrimaryKey(Long id);
 

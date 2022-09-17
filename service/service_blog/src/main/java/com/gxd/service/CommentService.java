@@ -1,8 +1,11 @@
 package com.gxd.service;
 
-import com.gxd.dao.Comment;
-public interface CommentService{
+import com.gxd.model.entity.Comment;
 
+/**
+ * @author xuandongguo
+ */
+public interface CommentService {
 
     int deleteByPrimaryKey(Long id);
 

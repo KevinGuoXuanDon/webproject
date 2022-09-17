@@ -1,7 +1,10 @@
 package com.gxd.mapper;
 
-import com.gxd.dao.User;
+import com.gxd.model.entity.User;
 
+/**
+ * @author xuandongguo
+ */
 public interface UserMapper {
     int deleteByPrimaryKey(Long id);
 

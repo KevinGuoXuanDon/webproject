@@ -1,7 +1,10 @@
 package com.gxd.mapper;
 
-import com.gxd.dao.Visitor;
+import com.gxd.model.entity.Visitor;
 
+/**
+ * @author xuandongguo
+ */
 public interface VisitorMapper {
     int deleteByPrimaryKey(Long id);
 
